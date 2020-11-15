@@ -146,7 +146,7 @@ function App() {
             <div className="bot-input-container" onClick={inputHandler}>
               <input
                 type="text" 
-                placeholder="Choose from below..."
+                placeholder="👇🏻👇🏻 Choose from below... 👇🏻👇🏻"
                 className="input"
                 disabled
               />
