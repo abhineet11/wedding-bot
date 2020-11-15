@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/wedding-bot/static/css/main.b642f3b9.chunk.css",
-    "main.js": "/wedding-bot/static/js/main.ed062850.chunk.js",
-    "main.js.map": "/wedding-bot/static/js/main.ed062850.chunk.js.map",
+    "main.js": "/wedding-bot/static/js/main.5f2f311f.chunk.js",
+    "main.js.map": "/wedding-bot/static/js/main.5f2f311f.chunk.js.map",
     "runtime-main.js": "/wedding-bot/static/js/runtime-main.ce142670.js",
     "runtime-main.js.map": "/wedding-bot/static/js/runtime-main.ce142670.js.map",
     "static/js/2.c610ff23.chunk.js": "/wedding-bot/static/js/2.c610ff23.chunk.js",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.ce142670.js",
     "static/js/2.c610ff23.chunk.js",
     "static/css/main.b642f3b9.chunk.css",
-    "static/js/main.ed062850.chunk.js"
+    "static/js/main.5f2f311f.chunk.js"
   ]
 }
