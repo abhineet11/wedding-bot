@@ -1,29 +1,28 @@
 {
   "files": {
-    "main.css": "/wedding-bot/static/css/main.86d82529.chunk.css",
-    "main.js": "/wedding-bot/static/js/main.c6af76d6.chunk.js",
-    "main.js.map": "/wedding-bot/static/js/main.c6af76d6.chunk.js.map",
-    "runtime-main.js": "/wedding-bot/static/js/runtime-main.ce142670.js",
-    "runtime-main.js.map": "/wedding-bot/static/js/runtime-main.ce142670.js.map",
-    "static/js/2.c610ff23.chunk.js": "/wedding-bot/static/js/2.c610ff23.chunk.js",
-    "static/js/2.c610ff23.chunk.js.map": "/wedding-bot/static/js/2.c610ff23.chunk.js.map",
-    "static/js/3.a7db9969.chunk.js": "/wedding-bot/static/js/3.a7db9969.chunk.js",
-    "static/js/3.a7db9969.chunk.js.map": "/wedding-bot/static/js/3.a7db9969.chunk.js.map",
+    "main.css": "/wedding-bot/static/css/main.6d8c5c4c.chunk.css",
+    "main.js": "/wedding-bot/static/js/main.33390fae.chunk.js",
+    "main.js.map": "/wedding-bot/static/js/main.33390fae.chunk.js.map",
+    "runtime-main.js": "/wedding-bot/static/js/runtime-main.094594f4.js",
+    "runtime-main.js.map": "/wedding-bot/static/js/runtime-main.094594f4.js.map",
+    "static/js/2.220b0cd5.chunk.js": "/wedding-bot/static/js/2.220b0cd5.chunk.js",
+    "static/js/2.220b0cd5.chunk.js.map": "/wedding-bot/static/js/2.220b0cd5.chunk.js.map",
+    "static/js/3.95828ab3.chunk.js": "/wedding-bot/static/js/3.95828ab3.chunk.js",
+    "static/js/3.95828ab3.chunk.js.map": "/wedding-bot/static/js/3.95828ab3.chunk.js.map",
     "index.html": "/wedding-bot/index.html",
-    "static/css/main.86d82529.chunk.css.map": "/wedding-bot/static/css/main.86d82529.chunk.css.map",
-    "static/js/2.c610ff23.chunk.js.LICENSE.txt": "/wedding-bot/static/js/2.c610ff23.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/wedding-bot/static/media/cover.35afeee1.jpeg",
+    "static/css/main.6d8c5c4c.chunk.css.map": "/wedding-bot/static/css/main.6d8c5c4c.chunk.css.map",
+    "static/js/2.220b0cd5.chunk.js.LICENSE.txt": "/wedding-bot/static/js/2.220b0cd5.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/wedding-bot/static/media/cover.b5afa7f3.jpg",
     "static/media/e-card.236b7a59.jpeg": "/wedding-bot/static/media/e-card.236b7a59.jpeg",
     "static/media/e-video.e413b067.mp4": "/wedding-bot/static/media/e-video.e413b067.mp4",
     "static/media/img1.aa756d6b.jpeg": "/wedding-bot/static/media/img1.aa756d6b.jpeg",
     "static/media/img2.4dfef6c9.jpeg": "/wedding-bot/static/media/img2.4dfef6c9.jpeg",
-    "static/media/sangeet.db2abcba.mp3": "/wedding-bot/static/media/sangeet.db2abcba.mp3",
     "static/media/wedding.b5887c68.mp3": "/wedding-bot/static/media/wedding.b5887c68.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.ce142670.js",
-    "static/js/2.c610ff23.chunk.js",
-    "static/css/main.86d82529.chunk.css",
-    "static/js/main.c6af76d6.chunk.js"
+    "static/js/runtime-main.094594f4.js",
+    "static/js/2.220b0cd5.chunk.js",
+    "static/css/main.6d8c5c4c.chunk.css",
+    "static/js/main.33390fae.chunk.js"
   ]
 }
