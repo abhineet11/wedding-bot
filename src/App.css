@@ -21,7 +21,7 @@
 
 .bot-section::before {
     content: ' ';
-    background-image: url('./assets/cover.jpeg');
+    background-image: url('./assets/cover.jpg');
     background-repeat: no-repeat;
     display: block;
     position: absolute;
@@ -132,7 +132,9 @@
 }
 
 .video-container > video {
-  border-radius: 32px;
+  border-top-right-radius: 1.3em;
+  border-bottom-left-radius: 1.3em;
+  border-bottom-right-radius: 1.3em;
   height: 87%;
   width: 86%;
 }

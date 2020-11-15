@@ -1,17 +1,15 @@
 import React, {useState, useEffect, useRef} from 'react';
 
-import ReactAudioPlayer from 'react-audio-player';
 import { Button } from '@material-ui/core';
 import TelegramIcon from '@material-ui/icons/Telegram';
 import './App.css';
 
-import CoverPic from './assets/cover.jpeg'
+import CoverPic from './assets/cover.jpg'
 import Image1 from './assets/img1.jpeg'
 import Image2 from './assets/img2.jpeg'
 import eCard from './assets/e-card.jpeg'
 
 import weddingSong from './assets/wedding.mp3'
-import sangeetSong from './assets/sangeet.mp3'
 import eVideo from './assets/e-video.mp4'
 
 const buttonConfig = [
@@ -40,7 +38,8 @@ const buttonConfig = [
 
 const botConfig = {
   'wedding date': {
-    text: [`It's on the <b>11th</b> of December.`, `Yeah we know, it's less than even a month and we are super nervous!`, `Please be there by 6pm 🙏 `]
+    text: [`It's on the <b>11th</b> of December.`, `Yeah we know, it's less than even a month and we are super nervous!`, `Please be there by 6pm 🙏 `],
+    audio:  weddingSong
   },
   'sangeet date': {
     text: [`It's on the <b>10th</b> of December.`, `Yeah! He is a really good dancer 🕺. I am not so bad myself 💃🏻`, `Please be there by 6pm 🙏 `]
@@ -75,6 +74,7 @@ function App() {
 
    const chatRef = useRef(false)
    const audioRef = useRef(false)
+   const videoRef = useRef(false)
    
   const renderChat = (data, i) => (
     <>
@@ -98,11 +98,11 @@ function App() {
                           <img src={data.location} style={{width: '100%'}}/>
                         </div>
                       }
-                      {<audio ref={audioRef}>
+                      {data.audio && <audio ref={audioRef} id="audio">
                         <source type="audio/mpeg"/>
                       </audio>}
                       {data.video && <div className="video-container">
-                          <video width="200" height="240" controls>
+                          <video ref={videoRef} width="200" height="240" controls>
                             <source src={data.video} type="video/mp4" />
                           </video>
                         </div>
@@ -117,28 +117,44 @@ function App() {
     </>
   )
 
-  useEffect(() => { 
+  useEffect(() => {
     if(chatRef.current) {
-        const newNode = chatRef
+      const newNode = chatRef
        newNode.current.scrollTop= newNode.current.scrollHeight
     }
   })
 
+
   useEffect(() => { 
     if(userSelection === 'wedding date') {
-      audioRef.current.src = weddingSong
-      audioRef.current.play()
+      audioRef.current.src = weddingSong;
+      audioRef.current.pause();
+      audioRef.current.play();
     }
-    // if(userSelection === 'sangeet date') {
-    //   audioRef.current.src = sangeetSong
-    //   audioRef.current.stop()
-    //   audioRef.current.play()
-    // }
+    if(userSelection === 'invitation') {
+      videoRef.current.addEventListener('playing', () => {
+        document.getElementById('audio').pause()
+      })
+    }
   }, [userSelection])
 
   const inputHandler = (e) => {
     setInput(!isInput)
   }
+
+  // const chatLogicHandler = ( id, label) => {
+  //   const cloneChatData = [...chatData];
+  //   console.log(cloneChatData, '***first')
+  //   // cloneChatData.pop()
+  //   const botObj = {
+  //     ...botConfig[id]
+  //   }
+  //   cloneChatData.push(botObj)
+  //   console.log(cloneChatData, '***second')
+  //   setChatData(cloneChatData)
+  //   setUserSelection(id)
+  //   setInput(!isInput)
+  // }
 
   const buttonHandler = (e, id, label) => {
     e.preventDefault();
@@ -156,6 +172,7 @@ function App() {
     setCurrentButtonFlow(buttons)
     setUserSelection(id)
     setInput(!isInput)
+    // setTimeout(() => chatLogicHandler( id, label), 3000)
   }
 
   return (
