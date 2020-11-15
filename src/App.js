@@ -8,9 +8,11 @@ import './App.css';
 import CoverPic from './assets/cover.jpeg'
 import Image1 from './assets/img1.jpeg'
 import Image2 from './assets/img2.jpeg'
-
+import eCard from './assets/e-card.jpeg'
 
 import weddingSong from './assets/wedding.mp3'
+import sangeetSong from './assets/sangeet.mp3'
+import eVideo from './assets/e-video.mp4'
 
 const buttonConfig = [
 
@@ -21,6 +23,10 @@ const buttonConfig = [
     {
       label: '🕺🏼 When is the Sangeet? 💃',
       id: 'sangeet date'
+    },
+    {
+      label: 'Invitation Card & Video',
+      id: 'invitation'
     },
     {
       label: 'Want to see your pics 😍',
@@ -46,6 +52,11 @@ const botConfig = {
   'location': {
     text: [`It's at <b>Sri Sitaramji Bhawan, Raniganj</b>`, 'you can just follow google maps:'],
     location: 'https://tars-file-upload.s3.amazonaws.com/ByNADi/e8e72425e745b4a32703175a09276c0a--staticmap.png'
+  },
+  'invitation': {
+    text: [`We may not have it all together, but together we have it all.`],
+    image: [eCard],
+    video: eVideo
   }
 }
 
@@ -90,6 +101,13 @@ function App() {
                       {<audio ref={audioRef}>
                         <source type="audio/mpeg"/>
                       </audio>}
+                      {data.video && <div className="video-container">
+                          <video width="200" height="240" controls>
+                            <source src={data.video} type="video/mp4" />
+                          </video>
+                        </div>
+                      }
+
                       {data.typing && 'typing..'}
                   </div>
                 </>
@@ -111,6 +129,11 @@ function App() {
       audioRef.current.src = weddingSong
       audioRef.current.play()
     }
+    // if(userSelection === 'sangeet date') {
+    //   audioRef.current.src = sangeetSong
+    //   audioRef.current.stop()
+    //   audioRef.current.play()
+    // }
   }, [userSelection])
 
   const inputHandler = (e) => {
