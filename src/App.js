@@ -5,15 +5,16 @@ import TelegramIcon from '@material-ui/icons/Telegram';
 import './App.css';
 
 import CoverPic from './assets/cover.jpg'
-import Image1 from './assets/img1.jpeg'
+import Abhineet from './assets/abhineet.jpeg'
+import Raksha from './assets/raksha.jpeg'
 import Image2 from './assets/img2.jpeg'
 import eCard from './assets/e-card.jpeg'
+import loading from './assets/loading.gif'
 
 import weddingSong from './assets/wedding.mp3'
 import eVideo from './assets/e-video.mp4'
 
 const buttonConfig = [
-
     {
       label: '📅 When is the wedding?',
       id: 'wedding date'
@@ -45,12 +46,13 @@ const botConfig = {
     text: [`It's on the <b>10th</b> of December.`, `Yeah! He is a really good dancer 🕺. I am not so bad myself 💃🏻`, `Please be there by 6pm 🙏 `]
   },
   'personal pics': {
-    image: [Image1, Image2],
+    image: [Abhineet, Raksha, Image2],
     text: [`Here you go`],
   },
   'location': {
     text: [`It's at <b>Sri Sitaramji Bhawan, Raniganj</b>`, 'you can just follow google maps:'],
-    location: 'https://tars-file-upload.s3.amazonaws.com/ByNADi/e8e72425e745b4a32703175a09276c0a--staticmap.png'
+    location: 'https://tars-file-upload.s3.amazonaws.com/ByNADi/e8e72425e745b4a32703175a09276c0a--staticmap.png',
+    link: 'https://goo.gl/maps/AA7CtMdjwJcqzzs68'
   },
   'invitation': {
     text: [`We may not have it all together, but together we have it all.`],
@@ -70,7 +72,8 @@ function App() {
 
   const [isInput, setInput] = useState(true);
   const [currentButtonFlow, setCurrentButtonFlow] = useState(buttonConfig)
-  const [userSelection, setUserSelection] = useState('')
+  const [userSelection, setUserSelection] = useState('');
+  const [userData, setuserData] = useState(null)
 
    const chatRef = useRef(false)
    const audioRef = useRef(false)
@@ -95,7 +98,10 @@ function App() {
                         </div>)
                       }
                       {data.location && <div className="message chat-bubble">
+                        <a href={data.link} target="_blank">
                           <img src={data.location} style={{width: '100%'}}/>
+                        </a>
+                          
                         </div>
                       }
                       {data.audio && <audio ref={audioRef} id="audio">
@@ -108,7 +114,9 @@ function App() {
                         </div>
                       }
 
-                      {data.typing && 'typing..'}
+                      {data.typing && <div className="loading chat-bubble">
+                          <img src={loading}/>
+                        </div>}
                   </div>
                 </>
              </div>
@@ -142,19 +150,23 @@ function App() {
     setInput(!isInput)
   }
 
-  // const chatLogicHandler = ( id, label) => {
-  //   const cloneChatData = [...chatData];
-  //   console.log(cloneChatData, '***first')
-  //   // cloneChatData.pop()
-  //   const botObj = {
-  //     ...botConfig[id]
-  //   }
-  //   cloneChatData.push(botObj)
-  //   console.log(cloneChatData, '***second')
-  //   setChatData(cloneChatData)
-  //   setUserSelection(id)
-  //   setInput(!isInput)
-  // }
+  useEffect(() => {
+    if(userData) {
+      setTimeout(() => chatLogicHandler(userData), 2000)
+    }
+  }, [userData])
+
+  const chatLogicHandler = ( id ) => {
+    const cloneChatData = [...chatData];
+    cloneChatData.pop()
+    const botObj = {
+      ...botConfig[id]
+    }
+    cloneChatData.push(botObj)
+    setChatData(cloneChatData)
+    setUserSelection(id)
+    setInput(!isInput)
+  }
 
   const buttonHandler = (e, id, label) => {
     e.preventDefault();
@@ -164,15 +176,14 @@ function App() {
       userSays: label
     } 
     const botObj = {
-      ...botConfig[id]
+      typing: true
     }
     cloneChatData.push(userObj)
     cloneChatData.push(botObj)
     setChatData(cloneChatData)
     setCurrentButtonFlow(buttons)
-    setUserSelection(id)
+    setuserData(id)
     setInput(!isInput)
-    // setTimeout(() => chatLogicHandler( id, label), 3000)
   }
 
   return (
