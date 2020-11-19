@@ -179,7 +179,7 @@
     display: flex;
     flex-direction: column;
     width: 80%;
-    margin: 20px auto;
+    margin: 10px auto;
 }
 
 @media only screen and (max-width: 1025px) {
