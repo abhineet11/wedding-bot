@@ -5,7 +5,7 @@ import TelegramIcon from '@material-ui/icons/Telegram';
 import './App.css';
 
 import CoverPic from './assets/cover.jpg'
-import Abhineet from './assets/abhineet.jpeg'
+import Abhineet from './assets/abhineet.jpg'
 import Raksha from './assets/raksha.jpeg'
 import Image2 from './assets/img2.jpeg'
 import eCard from './assets/e-card.jpeg'
