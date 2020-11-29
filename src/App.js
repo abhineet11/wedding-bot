@@ -7,7 +7,7 @@ import './App.css';
 import CoverPic from './assets/cover.jpg'
 import Abhineet from './assets/abhineet.jpg'
 import Raksha from './assets/raksha.jpeg'
-import Image2 from './assets/img2.jpeg'
+import Image2 from './assets/img2.jpg'
 import eCard from './assets/e-card.jpeg'
 import loading from './assets/loading.gif'
 
@@ -39,11 +39,11 @@ const buttonConfig = [
 
 const botConfig = {
   'wedding date': {
-    text: [`It's on the <b>11th</b> of December.`, `Yeah we know, it's less than even a month and we are super nervous!`, `Please be there by 6pm 🙏 `],
+    text: [`It's on the <b>11th</b> of December.`, `Yeah we know, it's less than even a month and we are super nervous!`, `Please be there by 7pm 🙏 `],
     audio:  weddingSong
   },
   'sangeet date': {
-    text: [`It's on the <b>10th</b> of December.`, `Yeah! He is a really good dancer 🕺. I am not so bad myself 💃🏻`, `Please be there by 6pm 🙏 `]
+    text: [`It's on the <b>10th</b> of December.`, `Yeah! He is a really good dancer 🕺. I am not so bad myself 💃🏻`, `Please be there by 7pm 🙏 `]
   },
   'personal pics': {
     image: [Abhineet, Raksha, Image2],
